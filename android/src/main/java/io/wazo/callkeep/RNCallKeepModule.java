@@ -1294,6 +1294,7 @@ public class RNCallKeepModule extends ReactContextBaseJavaModule implements Life
                     break;
                 case ACTION_ANSWER_CALL:
                     backToForeground();
+                    endCall(attributeMap.get(EXTRA_CALL_UUID));
                     args.putString("callUUID", attributeMap.get(EXTRA_CALL_UUID));
                     args.putBoolean("withVideo", Boolean.valueOf(attributeMap.get(EXTRA_HAS_VIDEO)));
                     sendEventToJS("RNCallKeepPerformAnswerCallAction", args);
